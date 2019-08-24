@@ -20,7 +20,7 @@ class apim inherits apim::params {
 
   # Copy configuration changes to the installed directory
   $template_list.each |String $template| {
-    file { "${carbon_home}/${template}":
+    file { "${carbon_home}/${product}-${product_version}/${template}":
       ensure  => file,
       mode    => '0644',
       content => template("${puppet_modules_path}/${module_name}/templates/carbon-home/${template}.erb"),
@@ -28,7 +28,7 @@ class apim inherits apim::params {
   }
 
   # Copy wso2server.sh to installed directory
-  file { "${carbon_home}/${start_script_template}":
+  file { "${carbon_home}/${product}-${product_version}/${start_script_template}":
     ensure  => file,
     mode    => '0754',
     content => template("${puppet_modules_path}/${module_name}/templates/carbon-home/${start_script_template}.erb")

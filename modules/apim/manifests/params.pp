@@ -21,7 +21,7 @@ class apim::params {
   $product = 'wso2am'
   $product_version = '2.5.0'
   $apim_package = 'wso2am-2.5.0.zip'
-  $carbon_home="/var/lib/jenkins/workspace/wso2am-2.5.0"
+  $carbon_home="/var/lib/jenkins/workspace/wso2am-2.5.0/${module_name}/"
   $start_script_template="bin/wso2server.sh"
   $mysql_connector="mysql-connector-java-5.1.41-bin.jar"
   $puppet_modules_path ="/var/lib/jenkins/workspace/wso2am-2.5.0/configs/modules"
