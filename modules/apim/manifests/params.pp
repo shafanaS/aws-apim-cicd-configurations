@@ -16,7 +16,7 @@
 
 # Claas apim::params
 # This class includes all the necessary parameters.
-class apim::params inherits apim_common::params {
+class apim::params {
 
   $product = 'wso2am'
   $product_version = '2.5.0'
