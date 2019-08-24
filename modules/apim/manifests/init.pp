@@ -23,7 +23,7 @@ class apim inherits apim::params {
     file { "${carbon_home}/${template}":
       ensure  => file,
       mode    => '0644',
-      content => template("${puppet_modules_path}/carbon-home/${template}.erb"),
+      content => template("${puppet_modules_path}/${module_name}/templates/carbon-home/${template}.erb"),
     }
   }
 
@@ -31,7 +31,7 @@ class apim inherits apim::params {
   file { "${carbon_home}/${start_script_template}":
     ensure  => file,
     mode    => '0754',
-    content => template("${puppet_modules_path}/carbon-home/${start_script_template}.erb")
+    content => template("${puppet_modules_path}/${module_name}/templates/carbon-home/${start_script_template}.erb")
   }
 
     # Copy mysql-connector-java-5.1.41-bin.jar to installed directory
