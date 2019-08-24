@@ -23,7 +23,7 @@ class apim inherits apim::params {
     file { "${carbon_home}/${template}":
       ensure  => file,
       mode    => '0644',
-      content => template("${module_name}/carbon-home/${template}.erb"),
+      content => template("${puppet_modules_path}/carbon-home/${template}.erb"),
     }
   }
 
@@ -31,11 +31,11 @@ class apim inherits apim::params {
   file { "${carbon_home}/${start_script_template}":
     ensure  => file,
     mode    => '0754',
-    content => template("${module_name}/carbon-home/${start_script_template}.erb")
+    content => template("${puppet_modules_path}/carbon-home/${start_script_template}.erb")
   }
 
     # Copy mysql-connector-java-5.1.41-bin.jar to installed directory
-    file { "$wso2_path/$product-$product_version/repository/components/lib/${mysql_connector}":
+    file { "$carbon_home/$product-$product_version/repository/components/lib/${mysql_connector}":
       mode   => '0754',
       source => "puppet:///modules/${module_name}/${mysql_connector}",
     }
