@@ -20,18 +20,11 @@ class apim::params {
 
   $product = 'wso2am'
   $product_version = '2.5.0'
-  $service_name = "${product}"
-  $mediation_flow_statistics = 'false'
-  $broker_elb_dns_name = 'localhost'
   $apim_package = 'wso2am-2.5.0.zip'
   $carbon_home="/var/lib/jenkins/workspace/wso2am-2.5.0"
   $start_script_template="bin/wso2server.sh"
   $mysql_connector="mysql-connector-java-5.1.41-bin.jar"
   $puppet_modules_path ="/var/lib/jenkins/workspace/wso2am-2.5.0/configs/modules"
-
-  $start_script_template = 'bin/wso2server.sh'
-  $jvmxms = '256m'
-  $jvmxmx = '1024m'
 
   $template_list = [
     'repository/conf/api-manager.xml',
