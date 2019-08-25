@@ -26,6 +26,9 @@ class apim::params {
   $mysql_connector="mysql-connector-java-5.1.41-bin.jar"
   $puppet_modules_path ="/var/lib/jenkins/workspace/wso2am-2.5.0/configs/modules"
 
+    $hostname = 'APIM_ALB_DNS_NAME'
+    $mgt_hostname = 'APIM_ALB_DNS_NAME'
+
   $template_list = [
     'repository/conf/api-manager.xml',
     'repository/conf/datasources/master-datasources.xml',
@@ -34,15 +37,72 @@ class apim::params {
     'repository/conf/axis2/axis2.xml',
   ]
 
-  # ----- Carbon.xml config params -----
-  /*
-     Host name or IP address of the machine hosting this server
-     e.g. www.wso2.org, 192.168.1.10
-     This is will become part of the End Point Reference of the
-     services deployed on this server instance.
-  */
-  $hostname = 'localhost'
-  $mgt_hostname = 'localhost'
+    # ----- api-manager.xml config params -----
+    $auth_manager_url = 'https://localhost:${mgt.transport.https.port}${carbon.context}services/'
+    $auth_manager_username = '${admin.username}'
+    $auth_manager_password = '${admin.password}'
+    $auth_manager_check_permission_remotely = 'false'
+    $api_gateway_url = 'https://localhost:${mgt.transport.https.port}${carbon.context}services/'
+    $api_gateway_username = '${admin.username}'
+    $api_gateway_password = '${admin.password}'
+    $api_gateway_endpoint = 'http://APIM_ALB_DNS_NAME:8280,https://APIM_ALB_DNS_NAME:8243'
+    $api_gateway_ws_endpoint = 'ws://${carbon.local.ip}:9099'
+    $analytics_enable = 'false'
+    $stream_processor_url = '{tcp://APIM_ALB_DNS_NAME:7612}'
+    $stream_processor_username = '${admin.username}'
+    $stream_processor_password = '${admin.password}'
+    $stream_processor_restapi_url = 'https://localhost:7444'
+    $stream_processor_restapi_username = '${admin.username}'
+    $stream_processor_restapi_password = '${admin.password}'
+    $api_store_url = 'https://APIM_ALB_DNS_NAME/store'
+    $api_store_server_url = 'https://APIM_ALB_DNS_NAME:${mgt.transport.https.port}${carbon.context}services/'
+    $api_store_username = '${admin.username}'
+    $api_store_password = '${admin.password}'
+    $api_publisher_url = 'https://APIM_ALB_DNS_NAME/publisher'
+
+    # ----- Master-datasources config params -----
+    $wso2carbon_db_url = 'jdbc:mysql://AM_RDS_DNS_NAME:3306/WSO2CARBON_DB;DB_CLOSE_ON_EXIT=FALSE'
+    $wso2carbon_db_username = 'CF_DB_USERNAME'
+    $wso2carbon_db_password = 'CF_DB_PASSWORD'
+    $wso2carbon_db_driver = 'org.h2.Driver'
+    $wso2carbon_db_validation_query = 'SELECT 1'
+    $wso2am_db_url = 'jdbc:mysql://AM_RDS_DNS_NAME:3306/WSO2AM_DB;DB_CLOSE_ON_EXIT=FALSE'
+    $wso2am_db_username = 'CF_DB_USERNAME'
+    $wso2am_db_password = 'CF_DB_PASSWORD'
+    $wso2am_db_driver = 'org.h2.Driver'
+    $wso2am_db_validation_query = 'SELECT 1'
+    $stat_db_url = 'jdbc:mysql://AM_RDS_DNS_NAME:3306/WSO2AM_STATS_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000;AUTO_SERVER=TRUE'
+    $stat_db_username = 'CF_DB_USERNAME'
+    $stat_db_password = 'CF_DB_PASSWORD'
+    $stat_db_driver = 'org.h2.Driver'
+    $stat_db_validation_query = 'SELECT 1'
+    $mb_store_db_url = 'jdbc:mysql://AM_RDS_DNS_NAME:3306/WSO2MB_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000'
+    $mb_store_db_username = 'CF_DB_USERNAME'
+    $mb_store_db_password = 'CF_DB_PASSWORD'
+    $mb_store_driver = 'org.h2.Driver'
+    $mb_store_db_validation_query = 'SELECT 1'
+
+    # ----- Carbon.xml config params -----
+    $ports_offset = 0
+    $key_store = '${carbon.home}/${product}-${product_version}/repository/resources/security/wso2carbon.jks'
+    $key_store_type = 'JKS'
+    $key_store_password = 'wso2carbon'
+    $key_store_key_alias = 'wso2carbon'
+    $key_store_key_password = 'wso2carbon'
+    $internal_key_store = '${carbon.home}/${product}-${product_version}/repository/resources/security/wso2carbon.jks'
+    $internal_key_store_type = 'JKS'
+    $internal_key_store_password = 'wso2carbon'
+    $internal_key_store_key_alias = 'wso2carbon'
+    $internal_key_store_key_password = 'wso2carbon'
+    $trust_store = '${carbon.home}/${product}-${product_version}/repository/resources/security/client-truststore.jks'
+    $trust_store_type = 'JKS'
+    $trust_store_password = 'wso2carbon'
+    $hostname = 'localhost'
+    $mgt_hostname = 'localhost'
+
+    # ----- user-mgt.xml config params -----
+    $admin_username = 'admin'
+    $admin_password = 'admin'
 
   # ----- axis2.xml config params -----
   $clustering_enabled = 'false'
