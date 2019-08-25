@@ -97,8 +97,6 @@ class apim::params {
     $trust_store = '${carbon.home}/${product}-${product_version}/repository/resources/security/client-truststore.jks'
     $trust_store_type = 'JKS'
     $trust_store_password = 'wso2carbon'
-    $hostname = 'localhost'
-    $mgt_hostname = 'localhost'
 
     # ----- user-mgt.xml config params -----
     $admin_username = 'admin'
