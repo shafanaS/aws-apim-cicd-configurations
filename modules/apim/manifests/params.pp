@@ -26,8 +26,12 @@ class apim::params {
   $mysql_connector="mysql-connector-java-5.1.41-bin.jar"
   $puppet_modules_path ="/var/lib/jenkins/workspace/wso2am-2.5.0/configs/modules"
 
-    $hostname = 'APIM_ALB_DNS_NAME'
-    $mgt_hostname = 'APIM_ALB_DNS_NAME'
+  $jvmxms = '256m'
+  $jvmxmx = '1024m'
+  $try_count = 5
+  $try_sleep = 5
+  $hostname = 'APIM_ALB_DNS_NAME'
+  $mgt_hostname = 'APIM_ALB_DNS_NAME'
 
   $template_list = [
     'repository/conf/api-manager.xml',
