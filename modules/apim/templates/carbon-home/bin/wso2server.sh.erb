@@ -327,6 +327,7 @@ do
     -Dorg.opensaml.httpclient.https.disableHostnameVerification=true \
     -Dhttpclient.hostnameVerifier=AllowAll \
     -DworkerNode=false \
+    -javaagent:/home/wso2user/jmx-exporter/jmx_prometheus_javaagent-0.12.0.jar=2222:/home/wso2user/jmx-exporter/jmx-config.yaml \
     org.wso2.carbon.bootstrap.Bootstrap $*
     status=$?
 done
