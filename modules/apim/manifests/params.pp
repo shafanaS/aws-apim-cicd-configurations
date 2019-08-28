@@ -70,16 +70,19 @@ class apim::params {
     $wso2carbon_db_password = 'CF_DB_PASSWORD'
     $wso2carbon_db_driver = 'org.h2.Driver'
     $wso2carbon_db_validation_query = 'SELECT 1'
-    $wso2am_db_url = 'jjdbc:h2:./repository/database/WSO2AM_DB;DB_CLOSE_ON_EXIT=FALSE'
+
+    $wso2am_db_url = 'jdbc:h2:./repository/database/WSO2AM_DB;DB_CLOSE_ON_EXIT=FALSE'
     $wso2am_db_username = 'CF_DB_USERNAME'
     $wso2am_db_password = 'CF_DB_PASSWORD'
     $wso2am_db_driver = 'org.h2.Driver'
     $wso2am_db_validation_query = 'SELECT 1'
+
     $stat_db_url = 'jdbc:h2:./repository/database/WSO2AM_STATS_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000;AUTO_SERVER=TRUE'
     $stat_db_username = 'CF_DB_USERNAME'
     $stat_db_password = 'CF_DB_PASSWORD'
     $stat_db_driver = 'org.h2.Driver'
     $stat_db_validation_query = 'SELECT 1'
+
     $mb_store_db_url = 'jdbc:h2:./repository/database/WSO2MB_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000'
     $mb_store_db_username = 'CF_DB_USERNAME'
     $mb_store_db_password = 'CF_DB_PASSWORD'
@@ -88,17 +91,17 @@ class apim::params {
 
     # ----- Carbon.xml config params -----
     $ports_offset = 0
-    $key_store = '${carbon.home}/${product}-${product_version}/repository/resources/security/wso2carbon.jks'
+    $key_store = '${carbon.home}/repository/resources/security/wso2carbon.jks'
     $key_store_type = 'JKS'
     $key_store_password = 'wso2carbon'
     $key_store_key_alias = 'wso2carbon'
     $key_store_key_password = 'wso2carbon'
-    $internal_key_store = '${carbon.home}/${product}-${product_version}/repository/resources/security/wso2carbon.jks'
+    $internal_key_store = '${carbon.home}/repository/resources/security/wso2carbon.jks'
     $internal_key_store_type = 'JKS'
     $internal_key_store_password = 'wso2carbon'
     $internal_key_store_key_alias = 'wso2carbon'
     $internal_key_store_key_password = 'wso2carbon'
-    $trust_store = '${carbon.home}/${product}-${product_version}/repository/resources/security/client-truststore.jks'
+    $trust_store = '${carbon.home}/repository/resources/security/client-truststore.jks'
     $trust_store_type = 'JKS'
     $trust_store_password = 'wso2carbon'
 
