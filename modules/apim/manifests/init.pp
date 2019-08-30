@@ -37,6 +37,6 @@ class apim inherits apim::params {
     # Copy mysql-connector-java-5.1.41-bin.jar to installed directory
     file { "$carbon_home/$product-$product_version/repository/components/lib/${mysql_connector}":
       mode   => '0754',
-      source => "puppet:///modules/${module_name}/${mysql_connector}",
+      source => "puppet:///modules/${module_name}/repository/components/lib/${mysql_connector}",
     }
 }

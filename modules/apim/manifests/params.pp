@@ -30,8 +30,8 @@ class apim::params {
   $jvmxmx = '1024m'
   $try_count = 5
   $try_sleep = 5
-  $hostname = 'APIM_ALB_DNS_NAME'
-  $mgt_hostname = 'APIM_ALB_DNS_NAME'
+  $hostname = 'ALB_DNS_NAME'
+  $mgt_hostname = 'ALB_DNS_NAME'
 
   $template_list = [
     'repository/conf/api-manager.xml',
@@ -49,20 +49,20 @@ class apim::params {
     $api_gateway_url = 'https://localhost:${mgt.transport.https.port}${carbon.context}services/'
     $api_gateway_username = '${admin.username}'
     $api_gateway_password = '${admin.password}'
-    $api_gateway_endpoint = 'http://APIM_ALB_DNS_NAME:8280,https://APIM_ALB_DNS_NAME:8243'
+    $api_gateway_endpoint = 'http://ALB_DNS_NAME:8280,https://ALB_DNS_NAME:8243'
     $api_gateway_ws_endpoint = 'ws://${carbon.local.ip}:9099'
     $analytics_enable = 'false'
-    $stream_processor_url = '{tcp://APIM_ALB_DNS_NAME:7612}'
+    $stream_processor_url = '{tcp://ALB_DNS_NAME:7612}'
     $stream_processor_username = '${admin.username}'
     $stream_processor_password = '${admin.password}'
     $stream_processor_restapi_url = 'https://localhost:7444'
     $stream_processor_restapi_username = '${admin.username}'
     $stream_processor_restapi_password = '${admin.password}'
-    $api_store_url = 'https://APIM_ALB_DNS_NAME/store'
-    $api_store_server_url = 'https://APIM_ALB_DNS_NAME:${mgt.transport.https.port}${carbon.context}services/'
+    $api_store_url = 'https://ALB_DNS_NAME/store'
+    $api_store_server_url = 'https://ALB_DNS_NAME:${mgt.transport.https.port}${carbon.context}services/'
     $api_store_username = '${admin.username}'
     $api_store_password = '${admin.password}'
-    $api_publisher_url = 'https://APIM_ALB_DNS_NAME/publisher'
+    $api_publisher_url = 'https://ALB_DNS_NAME/publisher'
 
     # ----- Master-datasources config params -----
     $wso2carbon_db_url = 'jdbc:h2:./repository/database/WSO2CARBON_DB;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=60000'
