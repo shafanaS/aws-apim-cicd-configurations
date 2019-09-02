@@ -71,7 +71,7 @@ class apim::params {
     $wso2carbon_db_driver = 'org.h2.Driver'
     $wso2carbon_db_validation_query = 'SELECT 1'
 
-    $wso2am_db_url = 'jdbc:mysql://RDS_DNS_NAME:3306/WSO2MB_DB?autoReconnect=true&amp;useSSL=false'
+    $wso2am_db_url = 'jdbc:mysql://RDS_DNS_NAME:3306/WSO2AM_DB?autoReconnect=true&amp;useSSL=false'
     $wso2am_db_username = 'CF_DB_USERNAME'
     $wso2am_db_password = 'CF_DB_PASSWORD'
     $wso2am_db_driver = 'com.mysql.jdbc.Driver'
