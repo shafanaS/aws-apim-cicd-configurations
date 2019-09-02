@@ -29,6 +29,48 @@
         </datasource>
 
         <datasource>
+            <name>WSO2UM_DS</name>
+            <description>The datasource used by user manager</description>
+            <jndiConfig>
+                <name>jdbc/WSO2UserDB</name>
+            </jndiConfig>
+            <definition type="RDBMS">
+                <configuration>
+                    <url><%= @wso2user_db_url %></url>
+                    <username><%= @wso2user_db_username %></username>
+                    <password><%= @wso2user_db_password %></password>
+                    <driverClassName><%= @wso2user_db_driver %></driverClassName>
+                    <maxActive>50</maxActive>
+                    <maxWait>60000</maxWait>
+                    <testOnBorrow>true</testOnBorrow>
+                    <validationQuery><%= @wso2user_db_validation_query %></validationQuery>
+                    <validationInterval>30000</validationInterval>
+                </configuration>
+            </definition>
+        </datasource>
+
+        <datasource>
+            <name>WSO2REG_DS</name>
+            <description>The datasource used by the registry</description>
+            <jndiConfig>
+                <name>jdbc/WSO2RegDB</name>
+            </jndiConfig>
+            <definition type="RDBMS">
+                <configuration>
+                    <url><%= @wso2reg_db_url %></url>
+                    <username><%= @wso2reg_db_username %><</username>
+                    <password><%= @wso2reg_db_password %>></password>
+                    <driverClassName><<%= @wso2reg_db_driver %></driverClassName>
+                    <maxActive>50</maxActive>
+                    <maxWait>60000</maxWait>
+                    <testOnBorrow>true</testOnBorrow>
+                    <validationQuery><%= @wso2reg_db_validation_query %></validationQuery>
+                    <validationInterval>30000</validationInterval>
+                </configuration>
+            </definition>
+        </datasource>
+
+        <datasource>
             <name>WSO2AM_DB</name>
             <description>The datasource used for API Manager database</description>
             <jndiConfig>
