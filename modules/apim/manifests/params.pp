@@ -74,31 +74,31 @@ class apim::params {
     $wso2am_db_url = 'jdbc:mysql://RDS_DNS_NAME:3306/WSO2MB_DB?autoReconnect=true&amp;useSSL=false'
     $wso2am_db_username = 'CF_DB_USERNAME'
     $wso2am_db_password = 'CF_DB_PASSWORD'
-    $wso2am_db_driver = 'org.h2.Driver'
+    $wso2am_db_driver = 'com.mysql.jdbc.Driver'
     $wso2am_db_validation_query = 'SELECT 1'
 
     $wso2reg_db_url = 'jdbc:mysql://RDS_DNS_NAME:3306/WSO2AM_REG_DB?autoReconnect=true&amp;useSSL=false'
     $wso2reg_db_username = 'CF_DB_USERNAME'
     $wso2reg_db_password = 'CF_DB_PASSWORD'
-    $wso2reg_db_driver = 'org.h2.Driver'
+    $wso2reg_db_driver = 'com.mysql.jdbc.Driver'
     $wso2reg_db_validation_query = 'SELECT 1'
 
     $wso2user_db_url = 'jdbc:mysql://RDS_DNS_NAME:3306/WSO2AM_USER_DB?autoReconnect=true&amp;useSSL=false'
     $wso2user_db_username = 'CF_DB_USERNAME'
     $wso2user_db_password = 'CF_DB_PASSWORD'
-    $wso2user_db_driver = 'org.h2.Driver'
+    $wso2user_db_driver = 'com.mysql.jdbc.Driver'
     $wso2user_db_validation_query = 'SELECT 1'
 
     $stat_db_url = 'jdbc:mysql://RDS_DNS_NAME:3306/WSO2AM_STATS_DB?autoReconnect=true&amp;useSSL=false'
     $stat_db_username = 'CF_DB_USERNAME'
     $stat_db_password = 'CF_DB_PASSWORD'
-    $stat_db_driver = 'org.h2.Driver'
+    $stat_db_driver = 'com.mysql.jdbc.Driver'
     $stat_db_validation_query = 'SELECT 1'
 
     $mb_store_db_url = 'jdbc:mysql://RDS_DNS_NAME:3306/WSO2MB_DB?autoReconnect=true&amp;useSSL=false'
     $mb_store_db_username = 'CF_DB_USERNAME'
     $mb_store_db_password = 'CF_DB_PASSWORD'
-    $mb_store_driver = 'org.h2.Driver'
+    $mb_store_driver = 'com.mysql.jdbc.Driver'
     $mb_store_db_validation_query = 'SELECT 1'
 
     # ----- Carbon.xml config params -----
