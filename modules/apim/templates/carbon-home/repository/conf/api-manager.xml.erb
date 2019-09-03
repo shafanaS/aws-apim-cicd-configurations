@@ -300,7 +300,7 @@
         <!--GroupingExtractor>org.wso2.carbon.apimgt.impl.DefaultGroupIDExtractorImpl</GroupingExtractor-->
         <!--This property is used to indicate how we do user name comparision for token generation https://wso2.org/jira/browse/APIMANAGER-2225-->
         <CompareCaseInsensitively>true</CompareCaseInsensitively>
-        <DisplayURL>false</DisplayURL>
+        <DisplayURL>true</DisplayURL>
         <URL><%= @api_store_url %></URL>
 
         <!-- Server URL of the API Store. -->
@@ -339,7 +339,7 @@
     </APIStore>
 
     <APIPublisher>
-        <DisplayURL>false</DisplayURL>
+        <DisplayURL>true</DisplayURL>
         <URL><%= @api_publisher_url %></URL>
         <!-- This parameter specifies enabling the capability of setting API documentation level granular visibility levels.
              By default any document associate with an API will have the same permissions set as the API.With enabling below
